@@ -1,4 +1,4 @@
-Cinema-Booking-System
-=====================
+Java OO Program
+=================
 
-A Cinema Booking System
+A simple OO booking system implemented in Java
