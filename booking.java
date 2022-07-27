@@ -1,10 +1,22 @@
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
-import javax.swing.ImageIcon;
-import java.util.ArrayList;
-import java.io.*;
+import java.awt.Choice;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import javax.swing.SwingUtilities;
+
+@SuppressWarnings("serial")
 public class booking extends JFrame implements ActionListener
 {
 	JTextField seat, totalcost;
@@ -37,7 +49,7 @@ public class booking extends JFrame implements ActionListener
 
 	Ticket tickets[] = new Ticket[30]; //Array for storing the tickets booked
 
-	public booking4()
+	booking()
 	{
 		setSize(800,500);
 		setLocation(200,200);
@@ -904,7 +916,12 @@ public class booking extends JFrame implements ActionListener
 	}
 	public static void main(String args[])
 	{
-		new booking4();
+		SwingUtilities.invokeLater(new Runnable(){
+			public void run() {
+				new booking();
+			}
+		});
+		
 	}
 }
 class Seat
